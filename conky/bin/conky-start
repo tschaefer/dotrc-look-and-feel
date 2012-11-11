@@ -1,4 +1,6 @@
-!#/bin/bash
+#!/bin/bash
 
 sleep 10
-conky -c $HOME/.conky/rings-conkyrc
+conky -c ${HOME}/.conky/rings-conkyrc
+
+# vim: set filetype=sh :
