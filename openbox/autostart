@@ -1,0 +1,24 @@
+## composite
+(xcompmgr -c -C -f -F -D 7) &
+
+## music
+(mpd)
+
+### term
+(xrdb -merge ~/.config/uxterm)
+
+## background
+(feh --bg-scale ~/.wallpapers/Grid-1920x1080.png)
+
+### panel
+(sleep 2s && tint2) &
+
+### volume
+(sleep 3s && volumeicon) &
+
+## gadgets
+(sleep 3s && conky -c ~/.conky/system.conkyrc)
+(sleep 3s && conky -c ~/.conky/mpd.conkyrc)
+
+## screensaver
+(xscreensaver -no-splash) &

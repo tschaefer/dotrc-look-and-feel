@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.5/menu">
+
+<menu id="exit-menu" label="Exit">
+	<item label="Lock Screen">
+		<action name="Execute">
+			<execute>xscreensaver-command --activate</execute>
+		</action>
+	</item>
+	<item label="Log Out">
+		<action name="Execute">
+			<execute>openbox --exit</execute>
+		</action>
+	</item>
+	<item label="Shutdown">
+		<action name="Execute">
+			<execute>sudo shutdown -h now</execute>
+		</action>
+	</item>
+	<item label="Restart">
+		<action name="Execute">
+			<execute>sudo shutdown -r now</execute>
+		</action>
+	</item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+	<item label="uXterm">
+		<action name="Execute"><execute>xterm -title "uxterm" -g 160x48+300-270</execute></action>
+	</item>
+	<item label="Google Chrome">
+		<action name="Execute"><execute>x-www-browser</execute></action>
+	</item>
+	<item label="Midnight Commander">
+		<action name="Execute"><execute>xterm -title "mc" -g 160x48+300-270 -e "mc"</execute></action>
+	</item>
+	<item label="Screen">
+		<action name="Execute"><execute>xterm -title "screen" -g 160x48+300-270 -e "/home/tschaefer/bin/start-screen.sh"</execute></action>
+	</item>
+	<item label="Music Player Control">
+		<action name="Execute"><execute>xterm -title "mpc" -g 100x12+495-24 -e "ncmpcpp"</execute></action>
+	</item>
+	<separator />
+	<menu id="/Debian" />
+	<separator />
+	<menu id="exit-menu" />
+</menu>
+
+</openbox_menu>
