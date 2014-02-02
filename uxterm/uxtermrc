@@ -1,0 +1,3 @@
+xterm*font: Terminus-14
+xterm*termName: xterm-256color
+xterm*boldMode: false
