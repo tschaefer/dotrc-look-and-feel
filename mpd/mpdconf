@@ -1,0 +1,30 @@
+# Files and directories
+music_directory "/mnt/berta/media/music"
+playlist_directory "/home/tschaefer/.config/mpd/playlists"
+db_file "/home/tschaefer/.config/mpd/db/mpd.db"
+log_file "/home/tschaefer/.config/mpd/log/mpd.log"
+pid_file "/home/tschaefer/.config/mpd/pid//mpd.pid"
+state_file "/home/tschaefer/.config/mpd/state/mpd.state"
+sticker_file "/home/tschaefer/.config/mpd/sticker/mpd.sql"
+
+# General music daemon options
+bind_to_address "localhost"
+#port "6600"
+#log_level "default"
+auto_update "yes"
+
+# Audio Output
+audio_output {
+ type "fifo"
+ name "mpd_fifo"
+ path "/tmp/mpd.fifo"
+ format "44100:16:2"
+}
+audio_output {
+ type "pulse"
+ name "PulseAudio"
+}
+
+# Character Encoding
+filesystem_charset "UTF-8"
+id3v1_encoding "UTF-8"
