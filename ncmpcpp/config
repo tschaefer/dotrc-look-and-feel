@@ -1,0 +1,27 @@
+### general
+startup_screen = 2
+playlist_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+enable_window_title = "no"
+header_visibility = "no"
+
+### visulazier
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "mpd_fifo"
+visualizer_sync_interval = "1"
+visualizer_type = "spectrum"
+visualizer_in_stereo = "yes"
+visualizer_sync_interval = "30"
+
+### song formats
+song_columns_list_format = "(7f)[green]{l} (8)[magenta]{n} (25)[cyan]{a} (40)[]{t} (30)[red]{b}"
+song_status_format = "{{%a{ {- %t} {@ %b} {%y}}}}|{%f}"
+
+### colors
+visualizer_color = "yellow"
+
+### clock
+clock_display_seconds = "yes"
+
