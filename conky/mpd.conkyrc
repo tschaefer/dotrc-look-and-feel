@@ -1,5 +1,5 @@
 # -- Conky settings -- #
-background no
+background yes
 update_interval 1
 
 cpu_avg_samples 2
@@ -14,18 +14,19 @@ text_buffer_size 2048
 imlib_cache_size 0
 
 # -- Window specifications -- #
-
 own_window yes
-own_window_type override
+own_window_type desktop
+own_window_class conky
 own_window_transparent yes
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 
 border_inner_margin 0
 border_outer_margin 0
+border_width 5
 
-minimum_size 327 320
+gap_x 15
 
-alignment middle_middle
+alignment bottom_left
 
 # -- Graphics settings -- #
 draw_shades no
@@ -35,13 +36,17 @@ draw_graph_borders no
 
 # -- Text settings -- #
 use_xft yes
-
+font Terminus-12
 uppercase no
 
-default_color 676767
+default_color 737373
 
-# -- Lua Load -- #
-lua_load $HOME/.conky/scripts/rings/rings.lua
-lua_draw_hook_pre ring_stats
 
 TEXT
+${if_mpd_playing}${execi 2 ~/.conky/scripts/mpd-cover.py}
+${image /tmp/mpd.cover -s 50x50 -p 0,0 }
+${voffset -22}${offset 55}${mpd_artist 15}
+${offset 55}${mpd_title 25}
+${voffset 10}${mpd_bar 5, 250}
+[${mpd_elapsed} / ${mpd_length}]${alignr}${mpd_status}${endif}
+

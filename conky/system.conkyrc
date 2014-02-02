@@ -1,0 +1,48 @@
+# -- Conky settings -- #
+background yes
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+imlib_cache_size 0
+
+# -- Window specifications -- #
+
+own_window yes
+own_window_type desktop
+own_window_class conky
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 340 280
+
+alignment bottom_right
+
+# -- Graphics settings -- #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# -- Text settings -- #
+use_xft yes
+
+uppercase no
+
+default_color 676767
+
+# -- Lua Load -- #
+lua_load $HOME/.conky/scripts/rings.lua
+lua_draw_hook_pre ring_stats
+
+TEXT
