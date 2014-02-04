@@ -3,9 +3,10 @@
 
 ## music
 (mpd)
+(sleep 1 && scmpc)
 
 ### term
-(xrdb -merge ~/.config/uxterm)
+(xrdb -merge ~/.config/uxterm/uxtermrc)
 
 ## background
 (feh --bg-scale ~/.wallpapers/Grid-1920x1080.png)
