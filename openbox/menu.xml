@@ -32,9 +32,6 @@
 	<item label="Google Chrome">
 		<action name="Execute"><execute>x-www-browser</execute></action>
 	</item>
-	<item label="Midnight Commander">
-		<action name="Execute"><execute>xterm -title "mc" -g 160x48+300-270 -e "mc"</execute></action>
-	</item>
 	<item label="Screen">
 		<action name="Execute"><execute>xterm -title "screen" -g 160x48+300-270 -e "/home/tschaefer/bin/start-screen.sh"</execute></action>
 	</item>
