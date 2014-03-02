@@ -45,7 +45,7 @@ default_color 737373
 TEXT
 ${if_mpd_playing}${execi 2 ~/.conky/scripts/mpd-cover.py}
 ${image /tmp/mpd.cover -s 50x50 -p 0,0 }
-${voffset -22}${offset 55}${mpd_artist 15}
+${voffset -22}${offset 55}${mpd_artist 30}
 ${offset 55}${mpd_title 25}
 ${voffset 10}${mpd_bar 5, 250}
 [${mpd_elapsed} / ${mpd_length}]${alignr}${mpd_status}${endif}
