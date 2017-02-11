@@ -13,29 +13,38 @@
 			<execute>openbox --exit</execute>
 		</action>
 	</item>
-	<item label="Shutdown">
+	<separator />
+	<item label="Poweroff">
 		<action name="Execute">
-			<execute>sudo shutdown -h now</execute>
+			<execute>systemctl poweroff</execute>
 		</action>
 	</item>
-	<item label="Restart">
+	<item label="Reboot">
 		<action name="Execute">
-			<execute>sudo shutdown -r now</execute>
+			<execute>systemctl reboot</execute>
+		</action>
+	</item>
+	<separator />
+	<item label="Sleep">
+		<action name="Execute">
+			<execute>systemctl hybrid-sleep</execute>
+		</action>
+	</item>
+	<item label="Hibernate">
+		<action name="Execute">
+			<execute>systemctl hibernate</execute>
 		</action>
 	</item>
 </menu>
 
 <menu id="root-menu" label="Openbox 3">
 	<item label="uXterm">
-		<action name="Execute"><execute>xterm -title "uxterm" -g 160x48+300-270</execute></action>
+		<action name="Execute"><execute>xterm -title "uxterm"</execute></action>
 	</item>
-	<item label="Google Chrome">
+	<item label="Chrome">
 		<action name="Execute"><execute>x-www-browser</execute></action>
 	</item>
-	<item label="Screen">
-		<action name="Execute"><execute>xterm -title "screen" -g 160x48+300-270 -e "/home/tschaefer/bin/start-screen.sh"</execute></action>
-	</item>
-	<item label="Music Player Control">
+	<item label="MPC">
 		<action name="Execute"><execute>xterm -title "mpc" -g 100x12+495-24 -e "ncmpcpp"</execute></action>
 	</item>
 	<separator />
