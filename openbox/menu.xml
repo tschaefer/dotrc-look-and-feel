@@ -2,55 +2,51 @@
 
 <openbox_menu xmlns="http://openbox.org/3.5/menu">
 
-<menu id="exit-menu" label="Exit">
-	<item label="Lock Screen">
-		<action name="Execute">
-			<execute>xscreensaver-command --activate</execute>
-		</action>
-	</item>
-	<item label="Log Out">
-		<action name="Execute">
-			<execute>openbox --exit</execute>
-		</action>
-	</item>
-	<separator />
-	<item label="Poweroff">
-		<action name="Execute">
-			<execute>systemctl poweroff</execute>
-		</action>
-	</item>
-	<item label="Reboot">
-		<action name="Execute">
-			<execute>systemctl reboot</execute>
-		</action>
-	</item>
-	<separator />
-	<item label="Sleep">
-		<action name="Execute">
-			<execute>systemctl hybrid-sleep</execute>
-		</action>
-	</item>
-	<item label="Hibernate">
-		<action name="Execute">
-			<execute>systemctl hibernate</execute>
-		</action>
-	</item>
+<menu id="system-menu" label="system">
+    <item label="lock screen">
+        <action name="Execute">
+            <execute>xscreensaver-command --activate</execute>
+        </action>
+    </item>
+    <separator />
+    <item label="poweroff">
+        <action name="Execute">
+            <execute>systemctl poweroff</execute>
+        </action>
+    </item>
+    <item label="reboot">
+        <action name="Execute">
+            <execute>systemctl reboot</execute>
+        </action>
+    </item>
+    <separator />
+    <item label="sleep">
+        <action name="Execute">
+            <execute>systemctl hybrid-sleep</execute>
+        </action>
+    </item>
+    <item label="hibernate">
+        <action name="Execute">
+            <execute>systemctl hibernate</execute>
+        </action>
+    </item>
 </menu>
 
 <menu id="root-menu" label="Openbox 3">
-	<item label="uXterm">
-		<action name="Execute"><execute>xterm -title "uxterm"</execute></action>
-	</item>
-	<item label="Chrome">
-		<action name="Execute"><execute>x-www-browser</execute></action>
-	</item>
-	<item label="MPC">
-		<action name="Execute"><execute>xterm -title "mpc" -g 100x12+495-24 -e "ncmpcpp"</execute></action>
-	</item>
-	<separator />
-	<menu id="/Debian" />
-	<separator />
-	<menu id="exit-menu" />
+    <item label="xterm">
+        <action name="Execute"><execute>xterm -title "uxterm"</execute></action>
+    </item>
+    <item label="chrome">
+        <action name="Execute"><execute>x-www-browser</execute></action>
+    </item>
+    <item label="mpc">
+        <action name="Execute"><execute>xterm -title "mpc" -g 100x12+460-24 -e "ncmpcpp"</execute></action>
+    </item>
+    <item label="spotify">
+        <action name="Execute"><execute>spotify</execute></action>
+    </item>
+    <separator />
+    <menu id="system-menu" />
 </menu>
 
 </openbox_menu>

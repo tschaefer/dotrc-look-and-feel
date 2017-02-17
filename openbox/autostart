@@ -1,6 +1,15 @@
 ## composite
 (xcompmgr -c -C -f -F -D 7) &
 
+## f.lux
+(xflux -l 50.0 -g 50.8)
+
+## keys
+(xbindkeys)
+
+## notifications
+(dunst) &
+
 ## music
 (mpd)
 (sleep 1 && scmpc)
