@@ -1,4 +1,3 @@
-.gitignore
 mpd/db/mpd.db
 mpd/log/mpd.log
 mpd/music
@@ -6,3 +5,8 @@ mpd/pid/mpd.pid
 mpd/state/mpd.state
 mpd/sticker/mpd.sql
 ncmpcpp/error.log
+google-chrome
+menus
+pulse
+user-dirs.dirs
+user-dirs.locale
