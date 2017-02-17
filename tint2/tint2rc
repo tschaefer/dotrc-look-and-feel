@@ -38,7 +38,7 @@ panel_background_id = 3
 wm_menu = 1
 panel_dock = 0
 panel_layer = bottom
-panel_items = TSC
+panel_items = EEFSBC
 
 #---------------------------------------------
 # TASKBAR
@@ -78,11 +78,25 @@ systray_icon_size = 16
 systray_icon_asb = 100 0 0
 
 #---------------------------------------------
+# BATTERY
+#---------------------------------------------
+battery = 1
+battery_hide = never
+battery_low_status = 10
+battery_low_cmd = notify-send -u critical -i /home/tschaefer/.icons/Gion/24x24/devices/system.png "Power management:" "Battery low ..."
+bat1_font = Terminus 8
+bat2_font = Terminus 8
+battery_font_color = #999999 76
+battery_padding = 5 1
+battery_background_id = 0
+battery_tooltip = 0
+
+#---------------------------------------------
 # CLOCK
 #---------------------------------------------
 time1_format = %H:%M:%S %a %d %B
 time1_font = Terminus 10
-clock_font_color = #ffffff 80
+clock_font_color = #999999 80
 clock_padding = 5 1
 clock_background_id = 0
 clock_lclick_command = /usr/bin/gsimplecal
@@ -91,12 +105,12 @@ clock_lclick_command = /usr/bin/gsimplecal
 # TOOLTIP
 #---------------------------------------------
 tooltip = 0
-tooltip_padding = 0 0 
+tooltip_padding = 0
 tooltip_show_timeout = 0
 tooltip_hide_timeout = 0
 tooltip_background_id = 0
-tooltip_font_color = #ffffff 80
-tooltip_font = Ubuntu Beta 10
+tooltip_font_color = #999999 76
+tooltip_font = Terminus 10
 
 #---------------------------------------------
 # MOUSE ACTION ON TASK
@@ -114,5 +128,29 @@ autohide_show_timeout = 0.3
 autohide_hide_timeout = 2
 autohide_height = 4
 
+# -------------------------------------------
+# EXECUTOR OPTIONS
+# -------------------------------------------
+execp = new
+execp_tooltip =
+execp_command = echo "Tobias Schäfer"
+execp_interval = 1
+execp_font = Terminus 8
+execp_font_color = #999999 76
+execp_background_id = 0
+execp_centered = 1
+execp_padding = 5 1
+
+execp = new
+execp_tooltip =
+execp_command = uname -srmo
+execp_interval = 1
+execp_font = Terminus 8
+execp_font_color = #999999 76
+execp_background_id = 0
+execp_centered = 1
+execp_padding = 5 1
 
 # End of config
+
+# vim:ft=cfg:
