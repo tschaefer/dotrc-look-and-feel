@@ -1,4 +1,4 @@
-# Files and directories
+### files, directories
 music_directory "~/.config/mpd/music"
 playlist_directory "~/.config/mpd/playlists"
 db_file "~/.config/mpd/db/mpd.db"
@@ -7,13 +7,11 @@ pid_file "~/.config/mpd/pid//mpd.pid"
 state_file "~/.config/mpd/state/mpd.state"
 sticker_file "~/.config/mpd/sticker/mpd.sql"
 
-# General music daemon options
+### music daemon
 bind_to_address "localhost"
-#port "6600"
-#log_level "default"
 auto_update "yes"
 
-# Audio Output
+### audio output
 audio_output {
  type "fifo"
  name "mpd_fifo"
@@ -22,10 +20,11 @@ audio_output {
 }
 audio_output {
  type "pulse"
- name "PulseAudio"
+ name "HDA Intel PCA"
+ sink "alsa_output.pci-0000_00_1f.3.analog-stereo"
 }
 mixer_type "software"
 
-# Character Encoding
+### encoding
 filesystem_charset "UTF-8"
 id3v1_encoding "UTF-8"
