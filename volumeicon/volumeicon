@@ -4,7 +4,7 @@ lmb_slider=true
 mmb_mute=true
 use_horizontal_slider=false
 show_sound_level=false
-onclick=roxterm -e 'alsamixer'
+onclick=xterm -e 'alsamixer'
 theme=White Gnome
 
 [Hotkeys]
@@ -17,4 +17,4 @@ mute=XF86AudioMute
 
 [Alsa]
 card=default
-channel=Front
+channel=Master
