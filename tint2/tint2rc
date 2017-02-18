@@ -38,7 +38,7 @@ panel_background_id = 3
 wm_menu = 1
 panel_dock = 0
 panel_layer = bottom
-panel_items = EEFSBC
+panel_items = EFSBC
 
 #---------------------------------------------
 # TASKBAR
@@ -135,17 +135,7 @@ execp = new
 execp_tooltip =
 execp_command = echo "Tobias Schäfer"
 execp_interval = 1
-execp_font = Terminus 8
-execp_font_color = #999999 76
-execp_background_id = 0
-execp_centered = 1
-execp_padding = 5 1
-
-execp = new
-execp_tooltip =
-execp_command = uname -srmo
-execp_interval = 1
-execp_font = Terminus 8
+execp_font = Terminus 10
 execp_font_color = #999999 76
 execp_background_id = 0
 execp_centered = 1
