@@ -2,6 +2,7 @@ xterm*font: Terminus-14
 xterm*termName: xterm-256color
 xterm*boldMode: false
 xterm*selecToClipboard: true
+xterm*locale: true
 
 #define S_base03        #002b36
 #define S_base02        #073642
