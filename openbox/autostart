@@ -2,7 +2,7 @@
 (xcompmgr -c -C -f -F -D 7) &
 
 ## f.lux
-(xflux -l 50.0 -g 50.8)
+(~/.bin/xflux -l 50.0 -g 50.8)
 
 ## keys
 (xbindkeys)
@@ -17,6 +17,9 @@
 ### term
 (xrdb -merge ~/.config/uxterm/uxtermrc)
 (xrdb -merge ~/.config/uxterm/colormanrc)
+
+### xscreensaver
+(xrdb -merge ~/.config/xscreensaver/xscreensaverrc)
 
 ## background
 (feh --bg-scale ~/.wallpapers/Grid-1920x1080.png)
