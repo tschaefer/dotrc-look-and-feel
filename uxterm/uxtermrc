@@ -3,6 +3,7 @@ xterm*termName: xterm-256color
 xterm*boldMode: false
 xterm*selecToClipboard: true
 xterm*locale: true
+xterm*utf8: 1
 
 #define S_base03        #002b36
 #define S_base02        #073642
