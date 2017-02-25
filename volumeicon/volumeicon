@@ -1,7 +1,7 @@
 [StatusIcon]
 stepsize=5
 lmb_slider=true
-mmb_mute=true
+mmb_mute=false
 use_horizontal_slider=false
 show_sound_level=false
 onclick=xterm -e 'alsamixer'
