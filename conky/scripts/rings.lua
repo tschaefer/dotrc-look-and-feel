@@ -65,7 +65,7 @@ settings_table = {
         fg_colour=0xffffff,
         fg_alpha=0.1,
         x=165, y=170,
-        radius=70,
+        radius=76,
         thickness=5,
         start_angle=60,
         end_angle=120
@@ -79,7 +79,7 @@ settings_table = {
         fg_colour=0xffffff,
         fg_alpha=0.1,
         x=165, y=170,
-        radius=70,
+        radius=82,
         thickness=5,
         start_angle=60,
         end_angle=120
