@@ -29,7 +29,7 @@ border_color = #000000 0
 # PANEL
 #---------------------------------------------
 panel_monitor = all
-panel_position = bottom center horizontal
+panel_position = top center horizontal
 panel_size = 100% 26
 panel_margin = 0 0
 panel_padding = 2 1
@@ -96,7 +96,7 @@ battery_tooltip = 0
 #---------------------------------------------
 time1_format = %H:%M:%S %a %d %B
 time1_font = Terminus 10
-clock_font_color = #999999 80
+clock_font_color = #999999 76
 clock_padding = 5 1
 clock_background_id = 0
 clock_lclick_command = /usr/bin/gsimplecal
@@ -133,7 +133,7 @@ autohide_height = 4
 # -------------------------------------------
 execp = new
 execp_tooltip =
-execp_command = echo "Tobias Schäfer"
+execp_command = lsb_release -d | cut -f2- -
 execp_interval = 1
 execp_font = Terminus 10
 execp_font_color = #999999 76
