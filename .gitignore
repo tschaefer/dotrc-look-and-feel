@@ -1,6 +1,7 @@
 mpd/db/mpd.db
 mpd/log/mpd.log
 mpd/music
+mpd/playlists
 mpd/pid/mpd.pid
 mpd/state/mpd.state
 mpd/sticker/mpd.sql
@@ -10,3 +11,6 @@ menus
 pulse
 user-dirs.dirs
 user-dirs.locale
+scmpc/scmpc.cache
+scmpc/scmpc.log
+scmpc/scmpc.pid
