@@ -14,14 +14,32 @@ auto_update "yes"
 ### audio output
 audio_output {
  type "fifo"
- name "mpd_fifo"
+ name "Visualizer"
  path "/tmp/mpd.fifo"
  format "44100:16:2"
 }
 audio_output {
  type "pulse"
- name "HDA Intel PCA"
+ name "HDA Intel"
  sink "alsa_output.pci-0000_00_1f.3.analog-stereo"
+}
+audio_output {
+ type "pulse"
+ name "Krawallmachine"
+ sink "krawallmachine"
+ format "44100:16:2"
+}
+audio_output {
+ type "pulse"
+ name "Soundport"
+ sink "soundport"
+ format "44100:16:2"
+}
+audio_output {
+  type "pulse"
+  name "Airports"
+  sink "airports"
+  format "44100:16:2"
 }
 mixer_type "software"
 
