@@ -1,14 +1,17 @@
 ## composite
-(xcompmgr -c -C -f -F -D 7) &
+(xcompmgr -c -C) &
+
+## pulseaudio
+(start-pulseaudio-x11)
 
 ## f.lux
 (~/.bin/xflux -l 50.0 -g 50.8)
 
+## tiling
+(rtile --all-auto) &
+
 ## keys
 (xbindkeys)
-
-## notifications
-(dunst) &
 
 ## music
 (mpd)
@@ -22,7 +25,7 @@
 (xrdb -merge ~/.config/xscreensaver/xscreensaverrc)
 
 ## background
-(feh --bg-scale ~/.wallpapers/Grid-1920x1080.png)
+(feh --bg-scale ~/.wallpapers/wallpaper.jpg)
 
 ### panel
 (sleep 2s && tint2) &
@@ -32,7 +35,7 @@
 
 ## gadgets
 (sleep 3s && conky -c ~/.conky/system.conkyrc)
-(sleep 3s && conky -c ~/.conky/mpd.conkyrc)
+(sleep 3s && conky -c ~/.conky/workspace.conkyrc)
 
 ## screensaver
 (xscreensaver -no-splash) &

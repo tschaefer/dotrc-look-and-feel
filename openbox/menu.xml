@@ -8,8 +8,13 @@
             <execute>xscreensaver-command --activate</execute>
         </action>
     </item>
+    <item label="log out">
+        <action name="Execute">
+            <execute>loginctl kill-user --signal=SIGTERM tschaefer</execute>
+        </action>
+    </item>
     <separator />
-    <item label="poweroff">
+    <item label="power off">
         <action name="Execute">
             <execute>systemctl poweroff</execute>
         </action>
@@ -32,19 +37,34 @@
     </item>
 </menu>
 
+<menu id="music-menu" label="music">
+    <item label="mpc">
+        <action name="Execute">
+            <execute>xterm -title "mcp" -e "ncmpcpp"</execute>
+        </action>
+    </item>
+    <item label="spotify">
+        <action name="Execute">
+            <execute>firefox -P app https://play.spotify.com</execute>
+        </action>
+    </item>
+    <item label="soundcloud">
+        <action name="Execute">
+            <execute>firefox -P app https://soundcloud.com</execute>
+        </action>
+    </item>
+</menu>
+
+
 <menu id="root-menu" label="Openbox 3">
     <item label="xterm">
         <action name="Execute"><execute>xterm -title "uxterm"</execute></action>
     </item>
-    <item label="chrome">
-        <action name="Execute"><execute>x-www-browser</execute></action>
+    <item label="firefox">
+        <action name="Execute"><execute>firefox -P tschaefer</execute></action>
     </item>
-    <item label="mpc">
-        <action name="Execute"><execute>xterm -title "mpc" -g 100x12+460-24 -e "ncmpcpp"</execute></action>
-    </item>
-    <item label="spotify">
-        <action name="Execute"><execute>spotify</execute></action>
-    </item>
+    <separator />
+    <menu id="music-menu" />
     <separator />
     <menu id="system-menu" />
 </menu>
