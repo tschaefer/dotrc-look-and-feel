@@ -1,10 +1,10 @@
-mpd/db/mpd.db
-mpd/log/mpd.log
+mpd/mpd.db
+mpd/mpd.log
 mpd/music
 mpd/playlists
-mpd/pid/mpd.pid
-mpd/state/mpd.state
-mpd/sticker/mpd.sql
+mpd/mpd.pid
+mpd/mpd.state
+mpd/mpd.sql
 ncmpcpp/error.log
 google-chrome
 menus
@@ -15,3 +15,7 @@ scmpc/scmpc.cache
 scmpc/scmpc.log
 scmpc/scmpc.pid
 gtk-2.0
+ranger/bookmarks
+ranger/history
+ranger/tagged
+wallpapers/wallpaper.jpg
