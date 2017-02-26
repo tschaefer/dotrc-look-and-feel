@@ -1,5 +1,0 @@
-rename Pictures
-!mkdir Temporary
-mkdir Temporary
-open_with 
-delete

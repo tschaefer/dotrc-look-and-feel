@@ -1,11 +1,11 @@
 ### files, directories
 music_directory "~/.config/mpd/music"
 playlist_directory "~/.config/mpd/playlists"
-db_file "~/.config/mpd/db/mpd.db"
-log_file "~/.config/mpd/log/mpd.log"
-pid_file "~/.config/mpd/pid//mpd.pid"
-state_file "~/.config/mpd/state/mpd.state"
-sticker_file "~/.config/mpd/sticker/mpd.sql"
+db_file "~/.config/mpd/mpd.db"
+log_file "~/.config/mpd/mpd.log"
+pid_file "~/.config/mpd/mpd.pid"
+state_file "~/.config/mpd/mpd.state"
+sticker_file "~/.config/mpd/mpd.sql"
 
 ### music daemon
 bind_to_address "localhost"
