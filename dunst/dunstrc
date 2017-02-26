@@ -64,7 +64,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "300x5-6+30"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
@@ -128,7 +128,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = auto
 
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
@@ -139,17 +139,17 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/google-chrome
+    browser = /usr/bin/firefox -P tschaefer
 
     # Align icons left/right/off
     icon_position = left
 
     # Paths to default icons.
-    icon_folders = /home/tschaefer/.icons/Gion/24x24/status/:/home/tschaefer/.icons/Gion/24x24/devices/
+    icon_folders = /usr/share/icons/gnome/24x24/emblems:/usr/share/icons/gnome/24x24/status/
 
 [frame]
-    width = 3
-    color = "#aaaaaa"
+    width = 1
+    color = "#767676"
 
 [shortcuts]
 
@@ -176,16 +176,16 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#222222"
-    foreground = "#888888"
+    foreground = "#ffffff"
     timeout = 10
 
 [urgency_normal]
-    background = "#285577"
+    background = "#222222"
     foreground = "#ffffff"
     timeout = 10
 
 [urgency_critical]
-    background = "#900000"
+    background = "#222222"
     foreground = "#ffffff"
     timeout = 0
 
