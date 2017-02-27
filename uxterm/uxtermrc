@@ -1,9 +1,12 @@
 xterm*font: Terminus-14
 xterm*termName: xterm-256color
 xterm*boldMode: false
-xterm*selecToClipboard: true
+xterm*selectToClipboard: true
 xterm*locale: true
 xterm*utf8: 1
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+xterm*on3Clicks: regex [[:alpha:]]+://([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+xterm*translations: #override Shift <Btn1Up>: exec-formatted("firefox -P tschaefer '%t'", CLIPBOARD)
 
 #define S_base03        #002b36
 #define S_base02        #073642
