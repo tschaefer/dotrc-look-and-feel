@@ -55,16 +55,34 @@
     </item>
 </menu>
 
-
-<menu id="root-menu" label="Openbox 3">
+<menu id="tools-menu" label="tools">
+    <item label="mutt">
+        <action name="Execute">
+            <execute>xterm -title "mutt" -e "mutt"</execute>
+        </action>
+    </item>
+    <item label="ranger">
+        <action name="Execute">
+            <execute>xterm -title "ranger" -e "ranger"</execute>
+        </action>
+    </item>
+    <item label="vim">
+        <action name="Execute">
+            <execute>xterm -title "vim" -e "vim"</execute>
+        </action>
+    </item>
     <item label="xterm">
         <action name="Execute"><execute>xterm -title "uxterm"</execute></action>
     </item>
     <item label="firefox">
         <action name="Execute"><execute>firefox -P tschaefer</execute></action>
     </item>
-    <separator />
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
     <menu id="music-menu" />
+    <separator />
+    <menu id="tools-menu" />
     <separator />
     <menu id="system-menu" />
 </menu>
