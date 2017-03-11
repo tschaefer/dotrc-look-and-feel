@@ -4,7 +4,8 @@ xterm*boldMode: false
 xterm*allowBoldFonts: false
 xterm*selectToClipboard: true
 xterm*locale: true
-xterm*utf8: 1
+xterm*utf8: true
+xterm*utf8Title: true
 xterm*cursorBlink: true
 xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 xterm*on3Clicks: regex [[:alpha:]]+://([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
@@ -65,3 +66,5 @@ xterm*color14:               S_base1
 !! white dark/light
 xterm*color7:                S_base2
 xterm*color15:               S_base3
+
+! vim:ft=xdefaults:

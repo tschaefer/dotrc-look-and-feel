@@ -4,3 +4,5 @@ xterm*colorBD: white
 ! blue
 xterm*colorULMode: true
 xterm*colorUL: #69b2b2
+
+! vim:ft=xdefaults:
