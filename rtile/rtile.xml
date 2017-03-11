@@ -2,4 +2,7 @@
 <settings>
     <gaps top="32" bottom="6" left="6" right="6" windows_x="6" windows_y="6"/>
     <columns max_size_main="2" max_size="2" max_count="2"/>
+
+    <window class="mpv" floating="true"/>
+    <window class="qemu-system" floating="true"/>
 </settings>
