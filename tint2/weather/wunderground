@@ -1,0 +1,65 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
+import json
+import os
+import requests
+import time
+from ConfigParser import SafeConfigParser
+
+def is_weather_file_valid(weather_file):
+    if not os.path.exists(weather_file):
+        return False
+
+    weather_file_mtime = os.path.getmtime(weather_file)
+    now = time.time()
+    if int(now) - int(weather_file_mtime) >= 3600:
+        return False
+
+    return True
+
+def fetch_weather_file(weather_url, weather_file):
+    weather_response = r = requests.get(weather_url);
+
+    with open(weather_file, 'w') as weather_fh:
+        weather_fh.write(weather_response.content)
+
+def get_weather_data(weather_file):
+
+    with open(weather_file) as weather_fh:
+        weather_raw = json.load(weather_fh)
+    return weather_raw['current_observation']
+
+def plot_weather(weather_icons, icon, temperature):
+    print "%s/%s.png" % (weather_icons, icon)
+    print "%.1f °C" % (temperature)
+
+def parse_config():
+    config = os.path.join(os.environ['HOME'],
+            '.config/tint2/weather/wunderground.cfg')
+    parser = SafeConfigParser()
+    parser.read(config)
+    api_key = parser.get('wunderground', 'api_key')
+    station = parser.get('wunderground', 'station')
+    weather_icons = parser.get('wunderground', 'icons')
+
+    weather_file = '/tmp/wunderground-%s-%s.json' % (api_key, station)
+    weather_url = 'http://api.wunderground.com/api/%s/conditions/q/pws:%s.json' % \
+            (api_key, station)
+
+    return (weather_file, weather_url, weather_icons)
+
+def run():
+    weather_file, weather_url, weather_icons = parse_config()
+    if not is_weather_file_valid(weather_file):
+        fetch_weather_file(weather_url, weather_file)
+    weather_data = get_weather_data(weather_file)
+    plot_weather(weather_icons, weather_data['icon'], weather_data['temp_c'])
+
+
+if __name__ == '__main__':
+    run()
