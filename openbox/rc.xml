@@ -237,7 +237,7 @@
         <command>scrot ~/screenshot.png</command>
       </action>
     </keybind>
-    <keybind key="ALT-F2">
+    <keybind key="A-F2">
       <action name="Execute">
         <command>gmrun</command>
       </action>
@@ -249,7 +249,7 @@
     </keybind>
     <keybind key="SUPER-T">
       <action name="Execute">
-        <command>xterm</command>
+        <command>st</command>
       </action>
     </keybind>
     <keybind key="SUPER-B">
