@@ -11,54 +11,81 @@ import requests
 import time
 from ConfigParser import SafeConfigParser
 
-def is_weather_file_valid(weather_file):
-    if not os.path.exists(weather_file):
+def is_weather_doc_valid(config):
+    doc = config['doc']
+
+    if not os.path.exists(doc):
         return False
 
-    weather_file_mtime = os.path.getmtime(weather_file)
+    mtime = os.path.getmtime(doc)
     now = time.time()
-    if int(now) - int(weather_file_mtime) >= 3600:
+    if int(now) - int(mtime) >= 3600:
         return False
 
     return True
 
-def fetch_weather_file(weather_url, weather_file):
-    weather_response = r = requests.get(weather_url);
 
-    with open(weather_file, 'w') as weather_fh:
-        weather_fh.write(weather_response.content)
+def fetch_weather_doc(config):
+    url = config['url']
+    doc = config['doc']
 
-def get_weather_data(weather_file):
+    r = requests.get(url)
 
-    with open(weather_file) as weather_fh:
-        weather_raw = json.load(weather_fh)
-    return weather_raw['current_observation']
+    with open(doc, 'w') as f:
+        f.write(r.content)
 
-def plot_weather(weather_icons, icon, temperature):
-    print "%s/%s.png" % (weather_icons, icon)
-    print "%.1f °C" % (temperature)
+
+def get_weather_data(config):
+    doc = config['doc']
+
+    with open(doc) as f:
+        raw = json.load(f)
+    return raw['current_observation']
+
+
+def plot_weather(config, data):
+    icons = config['icons']
+    icon_type = config['icon_type']
+    icon_url = data['icon_url']
+    temp = data['temp_c']
+
+    icon = icon_url.split('/')[-1].replace('gif', icon_type)
+    print "%s/%s" % (icons, icon)
+    print "%.1f °C" % (temp)
+
 
 def parse_config():
-    config = os.path.join(os.environ['HOME'],
+    config_file = os.path.join(os.environ['HOME'],
             '.config/tint2/weather/wunderground.cfg')
+
     parser = SafeConfigParser()
-    parser.read(config)
+    parser.read(config_file)
+
     api_key = parser.get('wunderground', 'api_key')
     station = parser.get('wunderground', 'station')
-    weather_icons = parser.get('wunderground', 'icons')
+    icons = parser.get('wunderground', 'icons')
+    icon_type = parser.get('wunderground', 'icon_type')
 
-    weather_file = '/tmp/wunderground-%s-%s.json' % (api_key, station)
-    weather_url = 'http://api.wunderground.com/api/%s/conditions/q/pws:%s.json' % \
+    doc = '/tmp/wunderground-%s-%s.json' % (api_key, station)
+    url = 'http://api.wunderground.com/api/%s/conditions/q/pws:%s.json' % \
             (api_key, station)
 
-    return (weather_file, weather_url, weather_icons)
+    config = { 'api_key': api_key,
+               'icon_type': icon_type,
+               'icons': icons,
+               'doc': doc,
+               'station': station,
+               'url': url }
+
+    return config
+
 
 def run():
-    weather_file, weather_url, weather_icons = parse_config()
-    if not is_weather_file_valid(weather_file):
-        fetch_weather_file(weather_url, weather_file)
-    weather_data = get_weather_data(weather_file)
-    plot_weather(weather_icons, weather_data['icon'], weather_data['temp_c'])
+    config = parse_config()
+    if not is_weather_doc_valid(config):
+        fetch_weather_doc(config)
+    data = get_weather_data(config)
+    plot_weather(config, data)
 
 
 if __name__ == '__main__':
