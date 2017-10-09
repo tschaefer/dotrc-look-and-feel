@@ -25,21 +25,9 @@ audio_output {
 }
 audio_output {
  type "pulse"
- name "Krawallmachine"
- sink "krawallmachine"
+ name "Sound"
+ sink "sound"
  format "44100:16:2"
-}
-audio_output {
- type "pulse"
- name "Soundport"
- sink "soundport"
- format "44100:16:2"
-}
-audio_output {
-  type "pulse"
-  name "Airports"
-  sink "airports"
-  format "44100:16:2"
 }
 mixer_type "software"
 
