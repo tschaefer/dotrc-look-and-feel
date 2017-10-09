@@ -5,4 +5,5 @@
 
     <window class="mpv" floating="true"/>
     <window class="qemu-system" floating="true"/>
+    <window class="gimp" floating="true"/>
 </settings>
