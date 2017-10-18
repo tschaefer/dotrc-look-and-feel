@@ -14,8 +14,6 @@
 (xbindkeys)
 
 ## music
-#(mpd)
-(sleep 1 && scmpc)
 (sleep 1 && ~/.bin/mpd-notify) &
 
 ### term
