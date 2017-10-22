@@ -64,10 +64,10 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>Terminal</name>
-      <name>Web</name>
-      <name>Music</name>
-      <name>Free</name>
+      <name>Desktop 0</name>
+      <name>Desktop 1</name>
+      <name>Desktop 2</name>
+      <name>Desktop 3</name>
     </names>
     <popupTime>875</popupTime>
   </desktops>
