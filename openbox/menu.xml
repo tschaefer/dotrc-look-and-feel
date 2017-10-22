@@ -71,7 +71,7 @@
             <execute>st -t "vim" -e "vim"</execute>
         </action>
     </item>
-    <item label="xterm">
+    <item label="term">
         <action name="Execute"><execute>st -t "uxterm"</execute></action>
     </item>
     <item label="firefox">
