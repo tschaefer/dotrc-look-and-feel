@@ -31,6 +31,9 @@ def fetch_weather_doc(config):
 
     r = requests.get(url)
 
+    if os.path.exists(doc):
+        os.unlink(doc)
+
     with open(doc, 'w') as f:
         f.write(r.content)
 
