@@ -50,7 +50,7 @@ conky.config = {
 };
 
 conky.text = [[
-${if_match ${desktop}==1}${color1}${endif}•${color}${offset 10}${if_match ${desktop}==2}${color1}${endif}•${color}${offset 10}${if_match ${desktop}==3}${color1}${endif}•${color}${offset 10}${if_match ${desktop}==4}${color1}${endif}•${color}
+${if_match ${desktop}==1}${color1}${endif}•${color}${offset 10}${if_match ${desktop}==2}${color1}${endif}•${color}${offset 10}${if_match ${desktop}==3}${color1}${endif}•${color}${offset 10}${if_match ${desktop}==4}${color1}${endif}•${color}${offset 10}${if_match ${desktop}==5}${color1}${endif}•${color}${offset 10}${if_match ${desktop}==6}${color1}${endif}•${color}
 ]];
 
 -- vim:ft=lua:
