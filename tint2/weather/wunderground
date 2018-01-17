@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
-
 import json
 import os
 import requests
 import time
 from ConfigParser import SafeConfigParser
+
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 
 def is_weather_doc_valid(config):
     doc = config['doc']
@@ -59,7 +60,7 @@ def plot_weather(config, data):
 
 def parse_config():
     config_file = os.path.join(os.environ['HOME'],
-            '.config/tint2/weather/wunderground.cfg')
+                               '.config/tint2/weather/wunderground.cfg')
 
     parser = SafeConfigParser()
     parser.read(config_file)
@@ -71,14 +72,14 @@ def parse_config():
 
     doc = '/tmp/wunderground-%s-%s.json' % (api_key, station)
     url = 'http://api.wunderground.com/api/%s/conditions/q/pws:%s.json' % \
-            (api_key, station)
+          (api_key, station)
 
-    config = { 'api_key': api_key,
-               'icon_type': icon_type,
-               'icons': icons,
-               'doc': doc,
-               'station': station,
-               'url': url }
+    config = {'api_key': api_key,
+              'icon_type': icon_type,
+              'icons': icons,
+              'doc': doc,
+              'station': station,
+              'url': url}
 
     return config
 
