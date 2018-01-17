@@ -5,7 +5,7 @@
 (start-pulseaudio-x11)
 
 ## f.lux
-(~/.bin/xflux -l 50.0 -g 50.8)
+(~/.bin/xflux -l 49.97000122 -g 8.27000046)
 
 ## tiling
 (rtile --all-auto) &
