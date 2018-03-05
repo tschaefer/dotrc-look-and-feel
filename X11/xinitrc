@@ -25,13 +25,13 @@ fi
 ## background
 xsetroot -solid "#073542"
 
-## f.lux
-~/.bin/xflux -l 49.97000122 -g 8.27000046
+## color temperature
+redshift -l 49.97000122:8.27000046 -t 5000:3600 -m randr &
 
 ## keys
 xbindkeys
 
 ### statusbar
-LC_TIME=en_US.UTF-8 /usr/local/bin/slstatus &
+LC_TIME=en_US.UTF-8 slstatus &
 
 exec ~/.config/X11/dwm
