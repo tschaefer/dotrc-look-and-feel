@@ -25,9 +25,6 @@ fi
 ## background
 xsetroot -solid "#073542"
 
-## color temperature
-redshift -l 49.97000122:8.27000046 -t 5000:3600 -m randr &
-
 ## keys
 xbindkeys
 
