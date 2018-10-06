@@ -23,7 +23,12 @@ if [ -n "$DBUS_SESSION_BUS_ADDRESS" ] && \
 fi
 
 ## background
-xsetroot -solid "#073542"
+WALLPAPER=~/.wallpapers/wallpaper.jpg
+if [ -h $WALLPAPER  ]; then
+    feh --bg-scale $WALLPAPER
+else
+    xsetroot -solid "#073542"
+fi
 
 ## keys
 xbindkeys
