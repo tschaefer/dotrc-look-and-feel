@@ -1,7 +1,7 @@
 ### volume
-"amixer -q set Master 5%- unmute"
+"amixer -q set Master 2%- unmute"
   XF86AudioLowerVolume
-"amixer -q set Master 5%+ unmute"
+"amixer -q set Master 2%+ unmute"
   XF86AudioRaiseVolume
 "pactl set-sink-mute 0 toggle"
   XF86AudioMute
