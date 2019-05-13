@@ -23,8 +23,8 @@ print_info() {
     info "DE" de
     info "WM" wm
     info "WM Theme" wm_theme
-    info "Theme" theme
-    info "Icons" icons
+    # info "Theme" theme
+    # info "Icons" icons
     info "Terminal" term
     info "Terminal Font" term_font
     info "CPU" cpu
@@ -35,7 +35,7 @@ print_info() {
     info "Disk" disk
     info "Battery" battery
     # info "Font" font
-    info "Song" song
+    # info "Song" song
     # info "Local IP" local_ip
     info "Public IP" public_ip
     # info "Users" users
