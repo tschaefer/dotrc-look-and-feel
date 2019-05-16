@@ -25,12 +25,12 @@ else
 fi
 
 ## keys
-if [[ -x $(type -p xbindkeys) ]]; then
+if [ $(which xbindkeys) ]; then
     xbindkeys
 fi
 
 ### statusbar
-if [[ -x $(type -p slstatus) ]]; then
+if [ $(which slstatus) ]; then
     LC_TIME=en_US.UTF-8 slstatus &
 else
     xsetroot -name "$(hostname -f)"
