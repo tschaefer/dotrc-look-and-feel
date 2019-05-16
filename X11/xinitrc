@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export PATH=~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/games:/usr/games
+
 ## dbus
 # see dbus-user-session, /etc/X11/Xsession.d/20dbus_xdg-runtime
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] && [ -n "$XDG_RUNTIME_DIR" ] && \
@@ -23,9 +25,16 @@ else
 fi
 
 ## keys
-xbindkeys
+if [[ -x $(type -p xbindkeys) ]]; then
+    xbindkeys
+fi
 
 ### statusbar
-LC_TIME=en_US.UTF-8 slstatus &
+if [[ -x $(type -p slstatus) ]]; then
+    LC_TIME=en_US.UTF-8 slstatus &
+else
+    xsetroot -name "$(hostname -f)"
+fi
+
 
 exec ~/.config/X11/dwm
