@@ -20,17 +20,9 @@ audio_output {
 }
 audio_output {
  type "pulse"
- name "HDA Intel"
- sink "alsa_output.pci-0000_00_1f.3.analog-stereo"
-}
-audio_output {
- type "pulse"
- name "Sound"
- sink "sound"
- format "44100:16:2"
+ name "Audio"
 }
 mixer_type "software"
 
 ### encoding
 filesystem_charset "UTF-8"
-id3v1_encoding "UTF-8"
