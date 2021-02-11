@@ -3,11 +3,19 @@
   XF86AudioLowerVolume
 "amixer -q set Master 2%+ unmute"
   XF86AudioRaiseVolume
-"pactl set-sink-mute 0 toggle"
+"amixer -q set Master toggle"
   XF86AudioMute
 
 ### brigthness
-"xbacklight -inc 5"
+"brightnessctl -q s 5%+"
   XF86MonBrightnessUp
-"xbacklight -dec 5"
+"brightnessctl -q s 5%-"
   XF86MonBrightnessDown
+
+### playerctl
+"playerctl previous"
+  XF86AudioPrev
+"playerctl next"
+  XF86AudioNext
+"playerctl play-pause"
+  XF86AudioPlay
