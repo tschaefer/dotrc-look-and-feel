@@ -1,0 +1,11 @@
+[Unit]
+Description=Set color temperature of display according to time of day
+Documentation=man:redshift(1)
+
+[Service]
+Environment=DISPLAY=:0.0
+ExecStart=/usr/bin/redshift
+TimeoutStopSec=5
+
+[Install]
+WantedBy=default.target
