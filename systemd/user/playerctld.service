@@ -1,0 +1,9 @@
+[Unit]
+Description=maintain an ordered list of controllable media players for playerctl
+Documentation=man:playerctld(1)
+
+[Service]
+ExecStart=/usr/bin/playerctld
+
+[Install]
+WantedBy=default.target
