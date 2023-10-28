@@ -24,13 +24,8 @@ else
     xsetroot -solid "#073542"
 fi
 
-## keys
-if [ $(which xbindkeys) ]; then
-    xbindkeys
-fi
-
 ### statusbar
-if [ $(which slstatus) ]; then
+if [ "$(which slstatus)" ]; then
     LC_TIME=en_US.UTF-8 slstatus &
 else
     xsetroot -name "$(hostname -f)"
