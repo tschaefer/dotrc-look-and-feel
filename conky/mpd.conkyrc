@@ -1,6 +1,6 @@
 conky.config = {
 -- Conky settings --
-    background = true,
+    background = false,
     update_interval = 1,
 
     cpu_avg_samples = 2,
@@ -16,7 +16,7 @@ conky.config = {
 
 -- Window specifications --
     own_window = true,
-    own_window_type = 'desktop',
+    own_window_type = 'override',
     own_window_class = 'conky',
     own_window_transparent = true,
     own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',

@@ -17,7 +17,7 @@ conky.config = {
 -- Window specifications --
 
     own_window = true,
-    own_window_type = 'desktop',
+    own_window_type = 'override',
     own_window_class = 'conky',
     own_window_transparent = true,
     own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
@@ -45,7 +45,6 @@ conky.config = {
 -- Lua Load --
     lua_load = '$HOME/.conky/scripts/rings.lua',
     lua_draw_hook_pre = 'ring_stats',
-
 };
 
 conky.text = '';
