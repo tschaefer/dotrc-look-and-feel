@@ -2,24 +2,10 @@
 
 export PATH=~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/games:/usr/games
 
-## dbus
-# see dbus-user-session, /etc/X11/Xsession.d/20dbus_xdg-runtime
-if [ -z "$DBUS_SESSION_BUS_ADDRESS" ] && [ -n "$XDG_RUNTIME_DIR" ] && \
-    [ "$XDG_RUNTIME_DIR" = "/run/user/`id -u`" ] && \
-    [ -S "$XDG_RUNTIME_DIR/bus" ]; then
-  DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
-  export DBUS_SESSION_BUS_ADDRESS
-fi
-
-if [ -x "/usr/bin/dbus-update-activation-environment" ]; then
-  dbus-update-activation-environment --verbose --systemd \
-    DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
-fi
-
 ## background
 WALLPAPER=~/.wallpapers/wallpaper.jpg
 if [ -h $WALLPAPER  ]; then
-    feh --bg-scale $WALLPAPER
+    feh --no-fehbg --bg-scale $WALLPAPER
 else
     xsetroot -solid "#073542"
 fi
@@ -31,5 +17,10 @@ else
     xsetroot -name "$(hostname -f)"
 fi
 
+### display color temperature
+systemd-run --user --unit=redshift bash -c '/usr/bin/redshift -m randr -l 47.3:11.6 -t 5700:3000 -b 1.0:0.8' >/dev/null 2>&1
+
+### system info
+nohup conky -c ~/.conky/system.conkyrc >/dev/null 2>&1 &
 
 exec ~/.config/X11/dwm
