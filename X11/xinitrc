@@ -21,9 +21,9 @@ fi
 systemd-run --setenv=DISPLAY=:0 --user --unit=redshift bash -c '/usr/bin/redshift -m randr -l 47.3:11.6 -t 5700:3000 -b 1.0:0.8' >/dev/null 2>&1
 
 ### yubikey touch detection
-systemd-run --user --unit=yubikey-touch-detector-herbe bash -c '/home/tschaefer/.env/bin/yubikey-touch-detector-herbe' >/dev/null 2>&1 &
+systemd-run --user --unit=yubikey-touch-detector-herbe bash -c '${HOME}/.env/bin/yubikey-touch-detector-herbe' >/dev/null 2>&1
 
 ### system info
-nohup conky -c ~/.conky/system.conkyrc >/dev/null 2>&1 &
+nohup conky -c ${HOME}/.conky/system.conkyrc >/dev/null 2>&1 &
 
 exec ~/.config/X11/dwm
